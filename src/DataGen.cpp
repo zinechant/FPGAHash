@@ -18,7 +18,7 @@ void genRandom(const char * FilePath, int len){
 
 }
 void genGrid(const char * FilePath, int len){
-    string s = "0x11111111";
+    string s = "11111111";
     FILE * Fo = fopen(FilePath, "w");
     for (; len; len--){
         fprintf(Fo, "%s\n", s.c_str());
@@ -26,27 +26,27 @@ void genGrid(const char * FilePath, int len){
             if (s[i] == '9')
                 s[i] = 'A';
             else if (s[i] == 'F')
-                s[i] = '0';
+                s[i] = '1';
             else s[i]++;
 
-            if (s[i] != '0')
+            if (s[i] != '1')
                 break;
         }
     }
 }
 void genRevGrid(const char * FilePath, int len){
-    string s = "0x11111111";
+    string s = "11111111";
     FILE * Fo = fopen(FilePath, "w");
     for (; len; len--){
         fprintf(Fo, "%s\n", s.c_str());
-        for (int i = 0; i < s.length(); i--) {
+        for (int i = 0; i < s.length(); i++) {
             if (s[i] == '9')
                 s[i] = 'A';
             else if (s[i] == 'F')
-                s[i] = '0';
+                s[i] = '1';
             else s[i]++;
 
-            if (s[i] != '0')
+            if (s[i] != '1')
                 break;
         }
     }
