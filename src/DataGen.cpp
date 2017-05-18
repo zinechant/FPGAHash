@@ -9,7 +9,7 @@ using namespace std;
 void genLinear(const char * FilePath, IntType len){
     FILE * Fo = fopen(FilePath, "w");
     for (IntType i = 0; i < len; i++)
-        fprintf(Fo, "%16x\n", i+1);
+        fprintf(Fo, "%16llx\n", i+1);
 }
 void genRandom(const char * FilePath, IntType len){
     printf("RAND_MAX = %d\n", RAND_MAX);
@@ -17,8 +17,8 @@ void genRandom(const char * FilePath, IntType len){
     FILE * Fo = fopen(FilePath, "w");
     for (int i = 0; i < len; i++){
         IntType x = rand();
-        x = x * ((IntType)1+RAND_MAX) + rand()
-        fprintf(Fo, "%16x\n", x);
+        x = x * ((IntType)1+RAND_MAX) + rand();
+        fprintf(Fo, "%16llx\n", x);
     }
 
 }
@@ -66,9 +66,9 @@ void genRevGrid(const char * FilePath, IntType len){
 }
 
 int main(){
-    genLinear(FileName[0], N);
-    genRandom(FileName[1], N);
-    genGrid(FileName[2], N);
-    genRevGrid(FileName[3], N);
+    genLinear(KeyFile[0], N);
+    genRandom(KeyFile[1], N);
+    genGrid(KeyFile[2], N);
+    genRevGrid(KeyFile[3], N);
     return 0;
 }
