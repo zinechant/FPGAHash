@@ -12,7 +12,7 @@ int readKeys(IntType a[], const char * FilePath){
     FILE * Fi = fopen(FilePath, "r");
     IntType x;
     int n = 0;
-    while (EOF != fscanf(Fi, "%x", &x)){
+    while (EOF != fscanf(Fi, "%llx", &x)){
         a[n++] = x;
     }
     return n;
@@ -36,7 +36,7 @@ void Murmur(IntType a[], HashTable h[]){
 void WriteHashTable(HashTable h[], const char * FilePath){
     FILE * Fo = fopen(FilePath, "w");
     for (int i = 0; i < N; i++){
-        fprintf(Fo, "%8x %8x\n", h[i].key, h[i].hash);
+        fprintf(Fo, "%16llx %16llx\n", h[i].key, h[i].hash);
     }
 }
 
