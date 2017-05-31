@@ -20,7 +20,6 @@ int readKeys(IntType a[], const char * FilePath){
 
 void Murmur(IntType a[], HashTable h[]){
     IntType x = 0;
-    int w = sizeof(IntType) * 8 - HBit;
     for (int i = 0; i < N; i++){
         x = a[i];
         h[i].key = x;
@@ -29,7 +28,7 @@ void Murmur(IntType a[], HashTable h[]){
         x ^= x >> 33;
         x *= 0xc4ceb9fe1a85ec53;
         x ^= x >> 33;
-        h[i].hash = x >> w;
+        h[i].hash = x;
     }
 }
 

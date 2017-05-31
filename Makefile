@@ -25,4 +25,4 @@ stat: build/Stat
 	cd ./build; ./Stat
 
 clean:
-	rm -rf ./build/*
+	rm -rf ./build/DataGen ./build/Murmur ./build/Tabulation ./build/Stat
